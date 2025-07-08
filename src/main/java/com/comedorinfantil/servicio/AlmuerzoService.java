@@ -1,14 +1,14 @@
 package com.comedorinfantil.servicio;
 
 import com.comedorinfantil.modelo.Almuerzo;
-import com.comedorinfantil.repositorio.RepositorioAlmuerzo;
+import com.comedorinfantil.repositories.AlmuerzoDAO;
 
 import java.util.List;
 
-public class ServicioAlmuerzo {
-    private final RepositorioAlmuerzo repo;
+public class AlmuerzoService {
+    private final AlmuerzoDAO repo;
 
-    public ServicioAlmuerzo(RepositorioAlmuerzo repo) {
+    public AlmuerzoService(AlmuerzoDAO repo) {
         this.repo = repo;
     }
 

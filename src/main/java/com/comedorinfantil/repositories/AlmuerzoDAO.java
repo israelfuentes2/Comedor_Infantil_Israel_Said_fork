@@ -1,19 +1,17 @@
-package com.comedorinfantil.repositorio;
+package com.comedorinfantil.repositories;
 
 import com.comedorinfantil.modelo.Almuerzo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioAlmuerzoEnMemoria implements RepositorioAlmuerzo {
+public class AlmuerzoDAO {
     private final List<Almuerzo> lista = new ArrayList<>();
 
-    @Override
     public void guardar(Almuerzo almuerzo) {
         lista.add(almuerzo);
     }
 
-    @Override
     public Almuerzo buscarPorId(int id) {
         for (Almuerzo a : lista) {
             if (a.getId() == id) return a;
@@ -21,12 +19,10 @@ public class RepositorioAlmuerzoEnMemoria implements RepositorioAlmuerzo {
         return null;
     }
 
-    @Override
     public List<Almuerzo> listarTodos() {
         return lista;
     }
 
-    @Override
     public void actualizar(Almuerzo almuerzo) {
         Almuerzo existente = buscarPorId(almuerzo.getId());
         if (existente != null) {
@@ -35,7 +31,6 @@ public class RepositorioAlmuerzoEnMemoria implements RepositorioAlmuerzo {
         }
     }
 
-    @Override
     public void eliminar(int id) {
         lista.removeIf(a -> a.getId() == id);
     }
